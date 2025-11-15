@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个Cloudflare Pages网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: #4a6ee0;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4a6ee0;
+        }
+        
+        .feature h3 {
+            color: #4a6ee0;
+            margin-bottom: 10px;
+        }
+        
+        .steps {
+            background: #f0f4ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .steps h2 {
+            color: #4a6ee0;
+            margin-bottom: 15px;
+        }
+        
+        ol {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .highlight {
+            background: #fff9c4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>欢迎使用Cloudflare Pages</h1>
+            <p class="subtitle">快速、安全的静态网站托管解决方案</p>
+        </header>
+        
+        <div class="content">
+            <div class="intro">
+                <p>这是一个基础的前端页面示例，展示了如何创建一个响应式网页并部署到Cloudflare Pages。</p>
+                <p>Cloudflare Pages是一个JAMstack平台，用于部署静态网站，提供全球CDN、自动HTTPS和即时缓存失效等功能。</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>快速部署</h3>
+                    <p>只需连接Git仓库，每次推送代码都会自动构建和部署。</p>
+                </div>
+                <div class="feature">
+                    <h3>全球CDN</h3>
+                    <p>您的网站将通过Cloudflare的全球网络快速分发。</p>
+                </div>
+                <div class="feature">
+                    <h3>完全免费</h3>
+                    <p>个人项目可免费使用，包含无限带宽和构建次数。</p>
+                </div>
+            </div>
+            
+            <div class="steps">
+                <h2>部署到Cloudflare Pages的步骤：</h2>
+                <ol>
+                    <li>将上述代码保存为 <span class="highlight">index.html</span> 文件</li>
+                    <li>创建一个GitHub、GitLab或Bitbucket仓库</li>
+                    <li>将代码推送到您的仓库</li>
+                    <li>登录Cloudflare仪表板，选择Pages</li>
+                    <li>连接您的Git仓库并按照提示完成部署</li>
+                </ol>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 我的第一个Cloudflare Pages网站 | 部署教程示例</p>
+        </footer>
+    </div>
+</body>
+</html>
