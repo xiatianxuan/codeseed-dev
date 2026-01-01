@@ -120,6 +120,35 @@
       </p>
     </div>
 
+    <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+    <p id="visitor-counter">
+      🎉 本站已被访问 <span id="visit-count">...</span> 次！
+    </p>
+    <div id="counter-error" style="color: #e74c3c; display: none;">
+      😢 无法加载访问量
+    </div>
+  </footer>
+
+  <script>
+    async function loadVisitorCount() {
+      const el = document.getElementById('visit-count');
+      const err = document.getElementById('counter-error');
+      try {
+        const res = await fetch('/api/visit');
+        const data = await res.json();
+        el.textContent = data.totalVisits.toLocaleString();
+      } catch (e) {
+        console.error(e);
+        el.textContent = '?';
+        err.style.display = 'block';
+      }
+    }
+
+    document.readyState === 'loading' 
+      ? document.addEventListener('DOMContentLoaded', loadVisitorCount)
+      : loadVisitorCount();
+  </script>
+
     <footer>
       <p>© 2026 CodeSeed | 托管于 Cloudflare Pages</p>
     </footer>

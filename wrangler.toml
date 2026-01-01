@@ -1,0 +1,7 @@
+# wrangler.toml
+name = "xnors-codeseed"
+
+# 绑定 D1 数据库到本地开发环境
+[[d1_databases]]
+binding = "DB"                    # ← 必须和代码中的 env.DB 一致
+database_name = "codeseed-dev-db" # ← 你的 D1 数据库名称（控制台显示的）

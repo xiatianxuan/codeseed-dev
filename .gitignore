@@ -15,3 +15,6 @@ yarn-error.log*
 
 # 静态资源
 public/images/
+
+# 配置文件
+tsconfig.json
