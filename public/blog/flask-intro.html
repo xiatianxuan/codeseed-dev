@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flask 入门指南 | CodeSeed</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fafafa;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin: 30px 0 15px;
+      color: #3498db;
+    }
+    p {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+    code {
+      background: #f1f1f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.95em;
+    }
+    pre {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-size: 0.95rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 1rem;
+    }
+    .highlight {
+      background: #fff9c4;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #7f8c8d;
+      font-size: 0.95rem;
+    }
+    a {
+      color: #e74c3c;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Python Flask 入门指南</h1>
+    <p>作者：<strong>CodeSeed | Xnors Studio</strong></p>
+    <p>发布于：2026年1月1日</p>
+
+    <h2>什么是 Flask？</h2>
+    <p>
+      <span class="highlight">Flask</span> 是一个用 Python 编写的轻量级 Web 应用框架。
+      它被称为“微框架”，因为它简单、灵活，且不强制使用特定的工具或库。
+      你可以用几行代码就启动一个 Web 服务器！
+    </p>
+
+    <h2>为什么选择 Flask？</h2>
+    <ul style="margin-left: 20px; margin-bottom: 16px;">
+      <li>✅ 极简设计，学习曲线平缓</li>
+      <li>✅ 适合小型项目、API 服务、原型开发</li>
+      <li>✅ 社区活跃，插件丰富（如 Flask-SQLAlchemy、Flask-Login）</li>
+      <li>✅ 与 Python 生态无缝集成</li>
+    </ul>
+
+    <h2>快速开始：Hello World</h2>
+    <p>安装 Flask（需先安装 Python）：</p>
+    <pre><code>pip install Flask</code></pre>
+
+    <p>创建 <code>app.py</code>：</p>
+    <pre><code>from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "&lt;h1&gt;Hello, Flask!&lt;/h1&gt;"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+</code></pre>
+
+    <p>运行：</p>
+    <pre><code>python app.py</code></pre>
+    <p>访问 <code>http://localhost:5000</code>，你将看到 "Hello, Flask!"。</p>
+
+    <h2>Flask vs 其他框架</h2>
+    <p>
+      与 Django（“全栈框架”）不同，Flask 不提供 ORM、用户认证等内置功能，
+      而是让你自由选择组件。这使得 Flask 更适合：
+    </p>
+    <ul style="margin-left: 20px; margin-bottom: 16px;">
+      <li>学习 Web 开发原理</li>
+      <li>构建 RESTful API</li>
+      <li>需要高度定制化的项目</li>
+    </ul>
+
+    <h2>结语</h2>
+    <p>
+      Flask 是进入 Python Web 开发世界的绝佳起点。
+      无论你是学生、竞赛选手（如 CSP-J/S），还是 hobbyist，
+      都能用它快速实现想法。
+    </p>
+    <p>
+      想动手试试？从一个简单的待办事项（Todo）应用开始吧！
+    </p>
+
+    <footer>
+      <p>© 2026 CodeSeed | Xnors Studio · 
+        <a href="/">返回主页</a> · 
+        <a href="/api/hello" target="_blank">测试 API</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
