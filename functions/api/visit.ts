@@ -1,14 +1,10 @@
 // functions/api/visit.ts
-import type { EventContext } from '@cloudflare/workers-types';
+// ⚠️ 不要 import 任何类型！
+// ⚠️ 不要给 context 加类型注解！
 
-// 定义你的环境变量类型
-interface Env {
-  DB: D1Database;
-}
-
-// 注意：这里不使用 PagesFunction<Env>，而是手动标注 context 类型
-export const onRequestGet = async (context: EventContext<Env, any, any>) => {
+export const onRequestGet = async (context) => {
   try {
+    // 直接使用，不依赖类型系统
     const DB = context.env.DB;
 
     await DB.prepare(`
@@ -40,11 +36,10 @@ export const onRequestGet = async (context: EventContext<Env, any, any>) => {
     });
 
   } catch (error) {
-    console.error("Visitor counter error:", error);
+    console.error("Error:", error);
     return new Response(JSON.stringify({
       success: false,
-      error: "Failed to update visitor count",
-      message: error instanceof Error ? error.message : String(error)
+      message: error.message || "Unknown error"
     }), { status: 500 });
   }
 };
