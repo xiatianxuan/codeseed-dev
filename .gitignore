@@ -1,0 +1,14 @@
+# 忽略依赖包
+node_modules/
+
+# 忽略本地环境变量（可能含密钥）
+.dev.vars
+
+# 忽略 Wrangler 日志和本地状态
+.wrangler/
+wrangler.log
+
+# 其他临时文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
